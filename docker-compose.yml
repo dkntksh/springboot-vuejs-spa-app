@@ -4,7 +4,7 @@ services:
     container_name: postgres
     image: postgres:latest
     ports:
-      - "5432:5000"
+      - "5432:5432"
     environment:
       - POSTGRES_DB=spa_demo
       - POSTGRES_USER=root
@@ -16,6 +16,7 @@ services:
       - "8080:5001"
     depends_on:
       - postgres
+    restart: always
   frontend:
     container_name: frontend
     build: ./frontend
