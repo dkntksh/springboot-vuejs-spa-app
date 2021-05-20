@@ -37,3 +37,8 @@ test {
 bootJar {
    archiveName = 'app'
 }
+
+task copyDistToStatic(type: Copy) {
+    from project(":frontend").file("dist")
+    into "src/main/resources/static"
+}

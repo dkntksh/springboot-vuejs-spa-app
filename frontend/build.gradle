@@ -1,0 +1,6 @@
+task npmBuild(type: NpmTask) {
+    args = ["run", "build",]
+    execOverrides {
+        it.standardOutput = new ByteArrayOutputStream()
+    }
+}
